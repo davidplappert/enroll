@@ -5,11 +5,8 @@ before_script:
   - rm -rf ./doc
   - rm -rf ./.yardoc
 script:
-  - bundle install
-  - bundle exec rails r -e test "DatabaseCleaner.clean"
-  - COVERAGE=true bundle exec rake parallel:spec[2]
-  - bundle exec cucumber -f rerun --out tmp/cucumber_failures.log
-  - bundle exec rake yard
+  - bundle exec rake
+  - bundle exec cucumber
 os:
   - linux
 services:
